@@ -2,7 +2,7 @@
 FilterIt is a tool that helps you parse and filter query strings easily. You can use it on both the front-end and back-end sides of your app.
 
 ## Front-end Usage
-On the front-end side of your app, you can use FilterIt to build dynamic query strings that can be used to filter data on the server-side. Here's a simple example of usage:
+On the front-end side of your app, you can use FilterIt to build dynamic query strings that can be used to filter data on the server side. Here's a simple example of usage:
 ```javascript
     const filter = new FilterIt();
     filter.Equal('id', 20).OrEqual('id', 22).SortBy('age');
@@ -24,6 +24,28 @@ class UserController extends BaseController
 }
 
 ```
+
+## How it works?
+
+You can use any of the following query parameters to filter and sort the results:
+
+- Filters: Specify filter conditions in the format < field | relation_field >=< operator >:< value >. Multiple filters can be chained together using
+  the '||' (or) and ',' (and) symbols. Supported operators are:
+  - equal, not_equal
+  - like, not_like
+  - ends_with, starts_with
+  - greater_than, greater_than_equal
+  - less_than, less_than_equal
+  - in, not_in
+  - between, not_between
+  - is_null, not_null
+  - relation filters: FilterIt also supports relationship filters like normal filters. Relationship fields must be connected with the character '___'. Some examples are:
+    - posts___tags___title=equal:filterit 
+- Sort: Specify the sort order in the format sort_by=< field | relation_field >:< direction >. Multiple sorts can be chained together using the ',' (and)
+  symbol. Supported directions are 'asc' and 'desc'.
+
+For example, to retrieve the users whose name contains "John", sorted by name:
+"/api/users?name=like:John&id=not_in:(1`2`3)&sort=name:asc"
 
 # Back-end Frameworks
 FilterIt is compatible with many back-end frameworks, including:
