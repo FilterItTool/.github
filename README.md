@@ -45,7 +45,8 @@ You can use any of the following query parameters to filter and sort the results
   symbol. Supported directions are 'asc' and 'desc'.
 
 For example, to retrieve the users whose name contains "John", sorted by name:
-"/api/users?name=like:John&id=not_in:(1`2`3)&sort=name:asc"
+
+`"/api/users?name=like:John&id=not_in:(1`2`3)&sort=name:asc"`
 
 # Back-end Frameworks
 FilterIt is compatible with many back-end frameworks, including:
