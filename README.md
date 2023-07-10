@@ -1,4 +1,4 @@
-# FilterIt
+# FilterIt Tool
 FilterIt is a tool that helps you parse and filter query strings easily. You can use it on both the front-end and back-end sides of your app.
 
 ## Front-end Usage
@@ -51,7 +51,7 @@ For example, to retrieve the users whose name contains "John", sorted by name:
 # Back-end Frameworks
 FilterIt is compatible with many back-end frameworks, including:
 
-- [Laravel](https://github.com/FilterIt/laravel)
+- [Laravel](https://github.com/FilterItTool/filterit-laravel)
 - GoLang    🔜
 - ExpressJs 🔜
 - Django    🔜
